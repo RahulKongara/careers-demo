@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.custom-gradient-btn {
+  background: linear-gradient(to right, #FFFAFA, #FF5151);
+  transition: background 0.3s;
+}
+
+.custom-gradient-btn:hover {
+  background: linear-gradient(to right, #FFFAFA, #3df888); 
+}
+
