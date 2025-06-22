@@ -22,7 +22,7 @@ const Job = ({ job }) => {
             <button onClick={() => setOpen(prevOpen => !prevOpen)} className='mt-4 p-2 rounded-lg custom-gradient-btn'>{open ? 'Hide details!' :'View detials!'}</button>
             <div className="btn-div">
                 <Collapse open={open}>
-                    <div className="collapse-div mt-4">
+                    <div className="collapse-div mt-4 overflow-hidden">
                         <h3><span className='font-bold'>Company: </span>{job.company} | Location: {job.location}</h3>
                         <p><span className='font-bold'>Salary:</span> $<span>{job.salary_from} - ${job.salary_to}</span></p>
                         <p className='font-bold'>Qualifications: </p><ReactMarkdown children={job.qualifications} />

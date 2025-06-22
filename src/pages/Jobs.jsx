@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useFetchJobs from "../components/useFetchJobs";
 import Job from '../components/Job';
 import Pagination from '../components/Pagination';
 import { BarLoader } from 'react-spinners'
+import Search from '../components/Search';
 
 const Jobs = () => {
     const [currPage, setCurrPage] = useState(1);
@@ -13,13 +14,19 @@ const Jobs = () => {
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currJobs = jobs.slice(firstPostIndex, lastPostIndex);
 
+    const [filteredJobs, setFilteredJobs] = useState(currJobs);
+
+    useEffect(() => {
+        setFilteredJobs(currJobs);
+    }, [jobs, currPage]);
 
     return (
-        <div className="container mt-30 md:w-[1120px]">
+        <div className="container mt-20 md:w-[1120px]">
             {loading && <BarLoader color={"green"} loading={loading} size={150} aria-label='Loading Spinner' data-testid='loader' />}
             {error && <h1>Error. Try refreshing...</h1>}
+            <Search jobs={currJobs} onResults={setFilteredJobs} />
             <div className="md:flex md:flex-wrap md:flex-row md:gap-4 md:items-start sm:flex sm:flex-col sm:justify-center sm:items-center">
-                {currJobs.map(job => (
+                {filteredJobs.map(job => (
                     <div className="w-[400px] sm:w-[524px] md:w-[524px]">
                         <Job key={job.id} job={job} />
                     </div>
