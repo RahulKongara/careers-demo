@@ -14,9 +14,9 @@ const Footer = () => {
             <div className="contact flex flex-col justify-center items-center">
                 <h4>Contact</h4>
                 <ul className="contact-list flex flex-col justify-center items-center">
-                    <li className='mt-4'><Link to="https://www.instagram.com/rahulkongara"><CiInstagram className='text-[40px]' /></Link></li>
-                    <li className='mt-4'><Link to="https://www.gmail.com/compose=true"><CiMail className='text-[40px]' /></Link></li>
-                    <li className='mt-4'><Link to="https://www.x.com/rahulkongara"><FaXTwitter className='text-[40px]' /></Link></li>
+                    <li className='mt-4'><Link to="https://www.instagram.com/rahul_kongara_/"><CiInstagram className='text-[40px]' /></Link></li>
+                    <li className='mt-4'><Link to="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqTfwWCbhKwSPgFTbVLKBPWKtltcRkJQKQKftShdsWCbPSTFZKFfwrCgggljwnRmGhwTdV"><CiMail className='text-[40px]' /></Link></li>
+                    <li className='mt-4'><Link to="https://www.x.com/rahulkongara02/"><FaXTwitter className='text-[40px]' /></Link></li>
                 </ul>
             </div>
             <div className="navigation flex flex-col justify-center items-center">
